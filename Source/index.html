@@ -85,8 +85,8 @@
                   <fieldset>
                     <legend>Depth</legend>
                     <span><input value="0" id="rad_Indentdepth_0" name="rad_Indentdepth" type="radio" /> <label for="rad_Indentdepth_0">0</label></span>
-                    <span><input value="1" id="rad_Indentdepth_1" name="rad_Indentdepth" type="radio" checked /> <label for="rad_Indentdepth_1">1</label></span>
-                    <span><input value="2" id="rad_Indentdepth_2" name="rad_Indentdepth" type="radio" /> <label for="rad_Indentdepth_2">2</label></span>
+                    <span><input value="1" id="rad_Indentdepth_1" name="rad_Indentdepth" type="radio" /> <label for="rad_Indentdepth_1">1</label></span>
+                    <span><input value="2" id="rad_Indentdepth_2" name="rad_Indentdepth" type="radio" checked /> <label for="rad_Indentdepth_2">2</label></span>
                     <span><input value="3" id="rad_Indentdepth_3" name="rad_Indentdepth" type="radio" /> <label for="rad_Indentdepth_3">3</label></span>
                     <span><input value="4" id="rad_Indentdepth_4" name="rad_Indentdepth" type="radio" /> <label for="rad_Indentdepth_4">4</label></span>
                   </fieldset>
@@ -103,16 +103,20 @@
 	                  <span><label for="chk_emptyTags">empty tags</label></span>
 	                </div>
 	                <div>
-	                  <input id="chk_angularNgCrapTags" type="checkbox" />
+	                  <input id="chk_angularNgCrapTags" type="checkbox" checked />
 	                  <span><label for="chk_angularNgCrapTags">&lt;ng-*&gt; Angular tags</label></span>
 	                </div>
                   	<div>
-	                  <input id="chk_emptyHTMLComments" type="checkbox" />
+	                  <input id="chk_emptyHTMLComments" type="checkbox" checked />
 	                  <span><label for="chk_emptyHTMLComments">Empty HTML comments: &lt;!----&gt;</label></span>
 	                </div>
 	                <div>
 	                  <input id="chk_allHTMLcomments" type="checkbox" />
 	                  <span><label for="chk_allHTMLcomments">All &lt;--&nbspHTML&nbspcomments&nbsp--&gt;</label></span>
+	                </div>
+                  <div>
+	                  <input id="chk_angularNgCrapClasses" type="checkbox" checked />
+	                  <span><label for="chk_angularNgCrapClasses">ng- Angular classes</label></span>
 	                </div>
                     <div>
                       <span><label for="txt_anyHTMLtag">Any HTML tag</label></span>
@@ -134,7 +138,7 @@
 	                  <span><label for="chk_style">style</label></span>
 	                </div>
 	                <div>
-	                  <input id="chk_dataDash" type="checkbox" aria-label="data- hyphenated attributes" />
+	                  <input id="chk_dataDash" type="checkbox" aria-label="data- hyphenated attributes" checked />
 	                  <span><label for="chk_dataDash">data-</label></span>
 	                </div>
 	                <div>
@@ -146,11 +150,11 @@
 	                  <span><label for="chk_onClickReact">onClick (React)</label></span>
 	                </div>
 	                <div>
-	                  <input id="chk_angularNgCrapAttributes1" type="checkbox" aria-label="ng- (Angular) n g hyphenated attributes" />
+	                  <input id="chk_angularNgCrapAttributes1" type="checkbox" aria-label="ng- (Angular) n g hyphenated attributes" checked />
 	                  <span><label for="chk_angularNgCrapAttributes1">ng- (Angular)</label></span>
 	                </div>
 	                <div>
-	                  <input id="chk_angularNgCrapAttributes2" type="checkbox" aria-label="_ng (Angular) underscore n g attributes" />
+	                  <input id="chk_angularNgCrapAttributes2" type="checkbox" aria-label="_ng (Angular) underscore n g attributes" checked />
 	                  <span><label for="chk_angularNgCrapAttributes2">_ng (Angular)</label></span>
 	                </div>
                   <button type="button" class="wide" id="removeAll" aria-pressed="false"><span aria-hidden="true">^ </span>Remove all of the above</button>
@@ -185,7 +189,7 @@
       <li id="note4">Other misc attributes (field): literally any other attribute that you want to remove. Enter in this field as a comma-separated list.</li>
     </ul>
     <hr>
-    <p>Made by <a href="https://twitter.com/lloydi" aria-label="Lloydi (Twitter)">Lloydi</a></p>
+    <p>Made by <a href="https://twitter.com/lloydi" aria-label="Lloydi (Twitter)">Lloydi</a>, with contributions by Owen Edwards</p>
     <p><a href="https://github.com/lloydi/markup-de-crapulator">View this on GitHub</a> or <a href="https://github.com/lloydi/markup-de-crapulator/issues">file an issue</a> if there's something you'd like to see it do.</p>
   </body>
   <script src="common.js"></script>
