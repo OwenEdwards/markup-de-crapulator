@@ -25,6 +25,7 @@ const filterEmptyComments = document.querySelector("#chk_emptyHTMLComments");
 const filterCustomAttrs = document.querySelector("#txt_customAttrs");
 const filterotherMiscAttrs = document.querySelector("#txt_otherMiscAttrs");
 const filterAnyHTMLtag = document.querySelector("#txt_anyHTMLtag");
+const filterChildrenOfAnyHTMLtag = document.querySelector("#txt_childrenOfAnyHTMLtag");
 const removeAll = document.querySelector("#removeAll");
 const tempDOMDumpingGround = document.querySelector("#tempDOMDumpingGround");
 const log = document.querySelector("#log");
@@ -70,7 +71,6 @@ function generateMarkup() {
     emptyElCount = emptyEls.length;
   }
 
-  let allElsInTempDom = tempDOMDumpingGround.querySelectorAll("*");
   if (filterAnyHTMLtag.value !== "") {
     let arrAnyHTMLtags = filterAnyHTMLtag.value.split(",");
     Array.from(arrAnyHTMLtags).forEach((arrAnyHTMLtag) => {
@@ -81,6 +81,21 @@ function generateMarkup() {
       });
     });
   }
+
+  if (filterChildrenOfAnyHTMLtag.value !== "") {
+    let arrAnyHTMLtags = filterChildrenOfAnyHTMLtag.value.split(",");
+    Array.from(arrAnyHTMLtags).forEach((arrAnyHTMLtag) => {
+      arrAnyHTMLtag = arrAnyHTMLtag.trim();
+      let elsToStrip = tempDOMDumpingGround.querySelectorAll(arrAnyHTMLtag);
+      Array.from(elsToStrip).forEach((elToStrip) => {
+        Array.from(elToStrip.childNodes).forEach((childToStrip) => {
+          elToStrip.removeChild(childToStrip);
+        });
+      });
+    });
+  }
+
+  let allElsInTempDom = tempDOMDumpingGround.querySelectorAll("*");
   Array.from(allElsInTempDom).forEach((el) => {
     let attrs = el.attributes;
     if (filterClass.checked) {
@@ -187,6 +202,9 @@ filterotherMiscAttrs.addEventListener("keyup", (e) => {
   generateMarkup();
 });
 filterAnyHTMLtag.addEventListener("keyup", (e) => {
+  generateMarkup();
+});
+filterChildrenOfAnyHTMLtag.addEventListener("keyup", (e) => {
   generateMarkup();
 });
 
