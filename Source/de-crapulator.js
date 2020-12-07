@@ -19,7 +19,7 @@ const filterDataDash = document.querySelector("#chk_dataDash");
 const filterAngularNgCrapAttributes1 = document.querySelector("#chk_angularNgCrapAttributes1");
 const filterAngularNgCrapAttributes2 = document.querySelector("#chk_angularNgCrapAttributes2");
 const filterAngularNgCrapTags = document.querySelector("#chk_angularNgCrapTags");
-// const filterAngularNgCrapClasses = document.querySelector("#chk_angularNgCrapClasses");
+const filterAngularNgCrapClasses = document.querySelector("#chk_angularNgCrapClasses");
 const filterAllHTMLcomments = document.querySelector("#chk_allHTMLcomments");
 const filterEmptyComments = document.querySelector("#chk_emptyHTMLComments");
 const filterCustomAttrs = document.querySelector("#txt_customAttrs");
@@ -110,16 +110,16 @@ function generateMarkup() {
     if (filterOnClickReact.checked) {
       el.removeAttribute("onClick");
     }
-    // if(filterAngularNgCrapClasses.checked) {
-    //   let CSSclasses = el.classList;
-    //   if (CSSclasses && CSSclasses.length > 0) {
-    //     Array.from(CSSclasses).forEach((CSSclass) => {
-    //       if (CSSclass.indexOf("ng-") === 0) {
-    //         el.classList.remove(CSSclass);
-    //       }
-    //     });
-    //   }
-    // }
+    if(filterAngularNgCrapClasses.checked) {
+      let CSSclasses = el.classList;
+      if (CSSclasses && CSSclasses.length > 0) {
+        Array.from(CSSclasses).forEach((CSSclass) => {
+          if (CSSclass.indexOf("ng-") === 0) {
+            el.classList.remove(CSSclass);
+          }
+        });
+      }
+    }
     Array.from(attrs).forEach((attr) => {
       if (filterDataDash.checked) {
         if (attr.name.indexOf("data-") === 0) {
