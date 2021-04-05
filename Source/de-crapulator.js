@@ -88,9 +88,12 @@ function generateMarkup() {
       arrAnyHTMLtag = arrAnyHTMLtag.trim();
       let elsToStrip = tempDOMDumpingGround.querySelectorAll(arrAnyHTMLtag);
       Array.from(elsToStrip).forEach((elToStrip) => {
-        Array.from(elToStrip.childNodes).forEach((childToStrip) => {
-          elToStrip.removeChild(childToStrip);
-        });
+        if (elToStrip.childNodes && elToStrip.childNodes.length > 0) {
+          Array.from(elToStrip.childNodes).forEach((childToStrip) => {
+            elToStrip.removeChild(childToStrip);
+          });
+          elToStrip.innerHTML = "...";
+        }
       });
     });
   }

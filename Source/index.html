@@ -16,15 +16,6 @@
         filter: invert();
       }
       h1 {display: inline-block;}
-      h1:before {
-        background: url(poop.png);
-        background-size: cover;
-        display: inline-block;
-        width: 25px;
-        height: 25px;
-        content: "";
-        margin-right: 10px;
-      }
       #wut {margin-left: 2em;transform: translateY(-0.4em);z-index: 1;}
       #indentLevel label {
         margin-right: 3px;
@@ -123,8 +114,8 @@
                       <input id="txt_anyHTMLtag" placeholder="e.g. svg, g, span" type="text" aria-describedby="note1" />
                     </div>
                     <div>
-                      <span><label for="txt_childrenOfAnyHTMLtag">Children of any HTML tag</label></span>
-                      <input id="txt_childrenOfAnyHTMLtag" placeholder="e.g. svg, g, span" type="text" />
+                      <span><label for="txt_childrenOfAnyHTMLtag">Elide children of any HTML tag</label></span>
+                      <input id="txt_childrenOfAnyHTMLtag" placeholder="e.g. svg, g, span" type="text" value="svg" aria-describedby="note5" />
                     </div>
                 </fieldset>
                 <fieldset>
@@ -187,10 +178,11 @@
       <li id="note2">Empty tags checkbox: means empty <code>&lt;div&gt;...&lt;/div&gt;</code> rather than empty elements liks <code>&lt;img&gt;</code> etc</li>
       <li id="note3">Custom data attributes (field): or, in fact, any attribute that is hyphenated can be entered as a comma-separated list. This includes aria attributes</li>
       <li id="note4">Other misc attributes (field): literally any other attribute that you want to remove. Enter in this field as a comma-separated list.</li>
+      <li id="note5">Remove childeren of this type of tag and replace with "..."</li>
     </ul>
     <hr>
     <p>Made by <a href="https://twitter.com/lloydi" aria-label="Lloydi (Twitter)">Lloydi</a>, with contributions by Owen Edwards</p>
-    <p><a href="https://github.com/lloydi/markup-de-crapulator">View this on GitHub</a> or <a href="https://github.com/lloydi/markup-de-crapulator/issues">file an issue</a> if there's something you'd like to see it do.</p>
+    <p><a href="https://github.com/OwenEdwards/markup-de-crapulator">View this on GitHub</a> or <a href="https://github.com/lloydi/markup-de-crapulator/issues">file an issue</a> if there's something you'd like to see it do.</p>
   </body>
   <script src="common.js"></script>
   <script src="indent.js"></script>
